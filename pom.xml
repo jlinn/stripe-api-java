@@ -4,7 +4,7 @@
 
     <groupId>net.joelinn</groupId>
     <artifactId>stripe</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>An object-oriented client library for Stripe's API</description>
     <url>http://github.com/jlinn/stripe-api-java</url>
