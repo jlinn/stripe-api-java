@@ -6,6 +6,7 @@
     <artifactId>stripe</artifactId>
     <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <name>stripe-api-java</name>
     <description>An object-oriented client library for Stripe's API</description>
     <url>http://github.com/jlinn/stripe-api-java</url>
 
