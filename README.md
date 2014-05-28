@@ -6,6 +6,14 @@ stripe-api-java
 A Java client library for [Stripe](https://stripe.com/docs/api)'s API.
 
 ## Usage
+### Maven dependency
+```xml
+<dependency>
+    <groupId>net.joelinn</groupId>
+    <artifactId>stripe</artifactId>
+    <version>1.0.1</version>
+</dependency>
+```
 
 ### Making API Calls
 #### Initialize the client object
