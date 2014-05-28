@@ -16,7 +16,9 @@ Stripe stripe = new Stripe("your_api_key");
 #### Customers calls
 ```java
 // create a customer
-CreateCustomerRequest customerRequest = new CreateCustomerRequest().setEMail("foo@bar.com").setDescription("A customer!")
+CreateCustomerRequest customerRequest = new CreateCustomerRequest()
+    .setEMail("foo@bar.com")
+    .setDescription("A customer!")
     .setCard(new CreateCardRequest("4242424242424242", 1, 2020));
 CustomerResponse customer = stripe.customers().createCustomer(customerRequest);
 
@@ -27,6 +29,7 @@ CustomerResponse retrievedCustomer = stripe.customers().getCustomer(customer.get
 #### Charges calls
 ```java
 // create a charge
-CreateChargeRequest chargeRequest = new CreateChargeRequest(350, "usd").setCustomer(customer.getId());
+CreateChargeRequest chargeRequest = new CreateChargeRequest(350, "usd")
+    .setCustomer(customer.getId());
 ChargeResponse charge = stripe.charges().createCharge(chargeRequest);
 ```
