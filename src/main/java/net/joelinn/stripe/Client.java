@@ -4,11 +4,9 @@ import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
-import com.sun.jersey.core.util.MultivaluedMapImpl;
 import net.joelinn.stripe.error.StripeApiException;
 import net.joelinn.stripe.error.card.*;
 import net.joelinn.stripe.json.StripeModule;
-import net.joelinn.stripe.request.Request;
 import net.joelinn.stripe.response.ErrorResponse;
 import org.codehaus.jackson.jaxrs.JacksonJsonProvider;
 import org.codehaus.jackson.map.DeserializationConfig;
@@ -31,17 +29,28 @@ public class Client {
 
     protected WebResource service;
 
-    protected ObjectMapper mapper;
+    /**
+     * @param apiKey your Stripe api key
+     */
+    public Client(String apiKey){
+        this(apiKey, false);
+    }
 
-    public Client(String apiKey) {
-        //TODO: configure jackson to ignore undefined properties
-        DefaultClientConfig config = new DefaultClientConfig();
+    /**
+     * @param apiKey your Stripe api key
+     * @param failOnUnknownProperties If true, a {@link org.codehaus.jackson.map.JsonMappingException} is thrown when
+     *                                unknown Stripe response object properties are encountered. This is primarily used for
+     *                                testing / debugging purposes.
+     */
+    public Client(String apiKey, boolean failOnUnknownProperties) {
         ObjectMapper mapper = new ObjectMapper();
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES);
         mapper.configure(DeserializationConfig.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
+        mapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, failOnUnknownProperties);
         mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL);
         mapper.registerModule(new StripeModule());
-        this.mapper = mapper;
+
+        DefaultClientConfig config = new DefaultClientConfig();
         config.getSingletons().add(new JacksonJsonProvider(mapper));
         com.sun.jersey.api.client.Client client = com.sun.jersey.api.client.Client.create(config);
         client.addFilter(new HTTPBasicAuthFilter(apiKey, ""));
@@ -64,10 +73,6 @@ public class Client {
         return request("POST", url, cls);
     }
 
-    public <T> T post(String url, Class<T> cls, Request body){
-        return request("POST", url, cls, body);
-    }
-
     public <T> T post(String url, Class<T> cls, MultivaluedMap<String, String> body){
         return request("POST", url, cls, body);
     }
@@ -84,11 +89,6 @@ public class Client {
         return request(method, url, cls, null, null);
     }
 
-    public <T> T request(String method, String url, Class<T> cls, Request body){
-        //mapper.convertValue(body, MultivaluedMapImpl.class)
-        return request(method, url, cls, mapper.convertValue(body, MultivaluedMapImpl.class), null);
-    }
-
     public  <T> T request(String method, String url, Class<T> cls, MultivaluedMap body){
         return request(method, url, cls, body, null);
     }
@@ -99,9 +99,6 @@ public class Client {
         if(status >= 300){
             handleError(clientResponse.getEntity(ErrorResponse.class), status);
         }
-        /*if(url.contains("card")){
-            String foo = clientResponse.getEntity(String.class);  //TODO: delete
-        }*/
         return clientResponse.getEntity(cls);
     }
 

@@ -50,7 +50,7 @@ public class Cards extends AbstractApi{
      * @param request the update request data
      */
     public CardResponse updateCard(String customerId, String cardId, UpdateCardRequest request){
-        return client.post(buildUrl(customerId, cardId), CardResponse.class, request);
+        return client.post(buildUrl(customerId, cardId), CardResponse.class, request.toRequest());
     }
 
     /**

@@ -1,5 +1,6 @@
 package net.joelinn.stripe.response.transfers;
 
+import net.joelinn.stripe.response.cards.CardResponse;
 import net.joelinn.stripe.response.recipients.BankAccountResponse;
 
 import java.util.Date;
@@ -30,6 +31,8 @@ public class TransferResponse {
     protected String type;
 
     protected BankAccountResponse bankAccount;
+
+    protected CardResponse card;
 
     protected String balanceTransaction;
 
@@ -99,5 +102,9 @@ public class TransferResponse {
 
     public String getType() {
         return type;
+    }
+
+    public CardResponse getCard() {
+        return card;
     }
 }

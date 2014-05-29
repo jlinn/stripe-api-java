@@ -34,6 +34,6 @@ abstract public class StripeTestCase {
 
     @Before
     public void setUpClient(){
-        client = new Client("tGN0bIwXnHdwOa85VABjPdSn8nWY7G7I");
+        client = new Client("tGN0bIwXnHdwOa85VABjPdSn8nWY7G7I", true);
     }
 }
