@@ -63,6 +63,8 @@ public class InvoiceResponse {
 
     protected Map<String, Object> metadata;
 
+    protected String statementDescription;
+
     public String getId() {
         return id;
     }
@@ -165,5 +167,9 @@ public class InvoiceResponse {
 
     public Map<String, Object> getMetadata() {
         return metadata;
+    }
+
+    public String getStatementDescription() {
+        return statementDescription;
     }
 }
