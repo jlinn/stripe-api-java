@@ -16,19 +16,23 @@ public class CreatedRequest extends Request{
 
     protected Date lte;
 
-    public void setGt(Date gt) {
+    public CreatedRequest setGt(Date gt) {
         this.gt = gt;
+        return this;
     }
 
-    public void setGte(Date gte) {
+    public CreatedRequest setGte(Date gte) {
         this.gte = gte;
+        return this;
     }
 
-    public void setLt(Date lt) {
+    public CreatedRequest setLt(Date lt) {
         this.lt = lt;
+        return this;
     }
 
-    public void setLte(Date lte) {
+    public CreatedRequest setLte(Date lte) {
         this.lte = lte;
+        return this;
     }
 }
