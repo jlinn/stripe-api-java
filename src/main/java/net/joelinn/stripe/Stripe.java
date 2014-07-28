@@ -36,6 +36,8 @@ public class Stripe {
 
     protected final Recipients recipients;
 
+    protected final Refunds refunds;
+
     protected final Subscriptions subscriptions;
 
     protected final Tokens tokens;
@@ -64,6 +66,7 @@ public class Stripe {
         invoices = new Invoices(client);
         plans = new Plans(client);
         recipients = new Recipients(client);
+        refunds = new Refunds(client);
         subscriptions = new Subscriptions(client);
         tokens = new Tokens(client);
         transfers = new Transfers(client);
@@ -123,6 +126,10 @@ public class Stripe {
 
     public Recipients recipients() {
         return recipients;
+    }
+
+    public Refunds refunds(){
+        return refunds;
     }
 
     public Subscriptions subscriptions() {

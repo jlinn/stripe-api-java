@@ -10,6 +10,7 @@ import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.junit.Assert.*;
 
 public class ChargesTest extends StripeTestCase{
@@ -49,6 +50,7 @@ public class ChargesTest extends StripeTestCase{
         ChargeResponse refundResponse = charges.refundCharge(createResponse.getId());
 
         assertEquals(createResponse.getAmount(), refundResponse.getAmountRefunded());
+        assertThat(refundResponse.getRefunds(), hasSize(1));
     }
 
     @Test

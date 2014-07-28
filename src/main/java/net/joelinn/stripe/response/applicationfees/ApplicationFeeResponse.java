@@ -1,6 +1,6 @@
 package net.joelinn.stripe.response.applicationfees;
 
-import net.joelinn.stripe.response.charges.RefundsResponse;
+import net.joelinn.stripe.response.refunds.ListRefundsResponse;
 
 import java.util.Date;
 import java.util.List;
@@ -33,7 +33,7 @@ public class ApplicationFeeResponse {
 
     protected boolean refunded;
 
-    protected List<RefundsResponse> refunds;
+    protected List<ListRefundsResponse> refunds;
 
     protected int amountRefunded;
 
@@ -81,7 +81,7 @@ public class ApplicationFeeResponse {
         return refunded;
     }
 
-    public List<RefundsResponse> getRefunds() {
+    public List<ListRefundsResponse> getRefunds() {
         return refunds;
     }
 

@@ -2,6 +2,7 @@ package net.joelinn.stripe.response.charges;
 
 import net.joelinn.stripe.response.cards.CardResponse;
 import net.joelinn.stripe.response.disputes.DisputeResponse;
+import net.joelinn.stripe.response.refunds.ListRefundsResponse;
 
 import java.util.Date;
 import java.util.List;
@@ -33,7 +34,7 @@ public class ChargeResponse {
 
     protected boolean refunded;
 
-    protected List<RefundsResponse> refunds;
+    protected List<ListRefundsResponse> refunds;
 
     protected int amountRefunded;
 
@@ -97,7 +98,7 @@ public class ChargeResponse {
         return refunded;
     }
 
-    public List<RefundsResponse> getRefunds() {
+    public List<ListRefundsResponse> getRefunds() {
         return refunds;
     }
 

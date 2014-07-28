@@ -1,6 +1,7 @@
 # Changelog
 
 ### 2014-07-28
+* Add [Refunds](https://github.com/jlinn/stripe-api-java/blob/master/src%2Fmain%2Fjava%2Fnet%2Fjoelinn%2Fstripe%2Fapi%2FRefunds.java) api
 * Add `failureMessage` and `failureCode` fields to [TransferResponse](https://github.com/jlinn/stripe-api-java/blob/master/src%2Fmain%2Fjava%2Fnet%2Fjoelinn%2Fstripe%2Fresponse%2Ftransfers%2FTransferResponse.java)
 * Add `forgiven` property to [InvoiceResponse](https://github.com/jlinn/stripe-api-java/blob/master/src%2Fmain%2Fjava%2Fnet%2Fjoelinn%2Fstripe%2Fresponse%2Finvoices%2FInvoiceResponse.java)
 * Add `receiptEmail` property to [ChargeResponse](https://github.com/jlinn/stripe-api-java/blob/master/src%2Fmain%2Fjava%2Fnet%2Fjoelinn%2Fstripe%2Fresponse%2Fcharges%2FChargeResponse.java)
