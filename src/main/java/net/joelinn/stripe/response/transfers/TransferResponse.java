@@ -38,6 +38,10 @@ public class TransferResponse {
 
     protected String description;
 
+    protected String failureCode;
+
+    protected String failureMessage;
+
     protected Map<String, Object> metadata;
 
     protected String recipient;
@@ -106,5 +110,13 @@ public class TransferResponse {
 
     public CardResponse getCard() {
         return card;
+    }
+
+    public String getFailureCode() {
+        return failureCode;
+    }
+
+    public String getFailureMessage() {
+        return failureMessage;
     }
 }

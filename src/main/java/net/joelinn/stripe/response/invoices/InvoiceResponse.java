@@ -31,6 +31,8 @@ public class InvoiceResponse {
 
     protected Date date;
 
+    protected boolean forgiven;
+
     protected ListLineItemsResponse lines;
 
     protected boolean paid;
@@ -171,5 +173,9 @@ public class InvoiceResponse {
 
     public String getStatementDescription() {
         return statementDescription;
+    }
+
+    public boolean isForgiven() {
+        return forgiven;
     }
 }

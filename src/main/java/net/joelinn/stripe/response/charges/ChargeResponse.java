@@ -33,7 +33,7 @@ public class ChargeResponse {
 
     protected boolean refunded;
 
-    protected List<RefundResponse> refunds;
+    protected List<RefundsResponse> refunds;
 
     protected int amountRefunded;
 
@@ -54,6 +54,8 @@ public class ChargeResponse {
     protected Map<String, Object> metadata;
 
     protected String statementDescription;
+
+    protected String receiptEmail;
 
     public String getId() {
         return id;
@@ -95,7 +97,7 @@ public class ChargeResponse {
         return refunded;
     }
 
-    public List<RefundResponse> getRefunds() {
+    public List<RefundsResponse> getRefunds() {
         return refunds;
     }
 
@@ -137,5 +139,9 @@ public class ChargeResponse {
 
     public DisputeResponse getDispute() {
         return dispute;
+    }
+
+    public String getReceiptEmail() {
+        return receiptEmail;
     }
 }

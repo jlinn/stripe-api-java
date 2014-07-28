@@ -12,7 +12,9 @@ public class CardResponse {
 
     protected String last4;
 
-    protected String type;
+    protected String brand;
+
+    protected String funding;
 
     protected short expMonth;
 
@@ -118,11 +120,15 @@ public class CardResponse {
         return addressZipCheck;
     }
 
-    public String getType() {
-        return type;
+    public String getBrand() {
+        return brand;
     }
 
     public String getRecipient() {
         return recipient;
+    }
+
+    public String getFunding() {
+        return funding;
     }
 }
