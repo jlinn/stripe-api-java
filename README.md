@@ -11,7 +11,7 @@ A Java client library for [Stripe](https://stripe.com/docs/api)'s API.
 <dependency>
     <groupId>net.joelinn</groupId>
     <artifactId>stripe</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
