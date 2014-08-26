@@ -1,5 +1,9 @@
 # Changelog
 
+### 2014-08-26
+* Fix [Request](https://github.com/jlinn/stripe-api-java/blob/master/src/main/java/net/joelinn/stripe/request/Request.java) to properly prefix nested request objects.
+* Properly deserialize objects returned in [EventResponse](https://github.com/jlinn/stripe-api-java/blob/master/src%2Fmain%2Fjava%2Fnet%2Fjoelinn%2Fstripe%2Fresponse%2Fevents%2FEventResponse.java).data. 
+
 ### 2014-07-28
 * Add [Refunds](https://github.com/jlinn/stripe-api-java/blob/master/src%2Fmain%2Fjava%2Fnet%2Fjoelinn%2Fstripe%2Fapi%2FRefunds.java) api
 * Add `failureMessage` and `failureCode` fields to [TransferResponse](https://github.com/jlinn/stripe-api-java/blob/master/src%2Fmain%2Fjava%2Fnet%2Fjoelinn%2Fstripe%2Fresponse%2Ftransfers%2FTransferResponse.java)

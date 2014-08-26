@@ -50,7 +50,7 @@ public class ChargesTest extends StripeTestCase{
         ChargeResponse refundResponse = charges.refundCharge(createResponse.getId());
 
         assertEquals(createResponse.getAmount(), refundResponse.getAmountRefunded());
-        assertThat(refundResponse.getRefunds(), hasSize(1));
+        assertThat(refundResponse.getRefunds().getData(), hasSize(1));
     }
 
     @Test

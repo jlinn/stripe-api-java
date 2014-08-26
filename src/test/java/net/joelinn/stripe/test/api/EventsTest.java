@@ -1,12 +1,15 @@
 package net.joelinn.stripe.test.api;
 
 import net.joelinn.stripe.api.Events;
+import net.joelinn.stripe.request.CreatedRequest;
 import net.joelinn.stripe.request.events.ListEventsRequest;
 import net.joelinn.stripe.response.events.EventResponse;
 import net.joelinn.stripe.response.events.ListEventsResponse;
 import net.joelinn.stripe.test.StripeTestCase;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Calendar;
 
 import static org.junit.Assert.assertEquals;
 
@@ -20,8 +23,9 @@ public class EventsTest extends StripeTestCase {
 
     @Test
     public void testListEvents(){
-        events.listEvents(new ListEventsRequest());
-
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -1);
+        events.listEvents(new ListEventsRequest().setCreated(new CreatedRequest().setGte(calendar.getTime())));
     }
 
     @Test

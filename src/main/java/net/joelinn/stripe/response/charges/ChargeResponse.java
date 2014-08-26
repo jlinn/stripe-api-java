@@ -5,7 +5,6 @@ import net.joelinn.stripe.response.disputes.DisputeResponse;
 import net.joelinn.stripe.response.refunds.ListRefundsResponse;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -34,7 +33,7 @@ public class ChargeResponse {
 
     protected boolean refunded;
 
-    protected List<ListRefundsResponse> refunds;
+    protected ListRefundsResponse refunds;
 
     protected int amountRefunded;
 
@@ -98,7 +97,7 @@ public class ChargeResponse {
         return refunded;
     }
 
-    public List<ListRefundsResponse> getRefunds() {
+    public ListRefundsResponse getRefunds() {
         return refunds;
     }
 

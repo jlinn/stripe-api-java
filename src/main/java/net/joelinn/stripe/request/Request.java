@@ -38,7 +38,7 @@ abstract public class Request {
                         field.setAccessible(true);
                         inaccessible = true;
                     }
-                    Object fieldValue = field.get(this);
+                    Object fieldValue = field.get(request);
                     if(fieldValue != null){
                         String key = naming.translate(field.getName());
                         if(prefix != null){
@@ -48,7 +48,7 @@ abstract public class Request {
                             map.putAll(mapToRequest((Map) fieldValue, key));
                         }
                         else if(fieldValue instanceof Request){
-                            map.putAll(((Request) fieldValue).toRequest());
+                            map.putAll(toRequest((Request) fieldValue, key));
                         }
                         else if(fieldValue instanceof Date){
                             map.add(key, dateToString((Date) fieldValue));

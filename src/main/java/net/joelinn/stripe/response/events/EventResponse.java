@@ -1,5 +1,8 @@
 package net.joelinn.stripe.response.events;
 
+import net.joelinn.stripe.json.StripeObjectDeserializer;
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+
 import java.util.Date;
 import java.util.Map;
 
@@ -17,6 +20,7 @@ public class EventResponse {
 
     protected Date created;
 
+    @JsonDeserialize(using = StripeObjectDeserializer.class)
     protected Map<String, Object> data;
 
     protected int pendingWebhooks;
