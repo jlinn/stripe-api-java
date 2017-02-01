@@ -1,5 +1,8 @@
 package net.joelinn.stripe.response.invoiceitems;
 
+import net.joelinn.stripe.response.plans.ListPlansResponse;
+import net.joelinn.stripe.response.plans.PlanResponse;
+
 import java.util.Date;
 import java.util.Map;
 
@@ -25,13 +28,45 @@ public class InvoiceItemResponse {
 
     protected boolean proration;
 
+    protected boolean discountable;
+
     protected String description;
 
     protected String invoice;
 
     protected Map<String, Object> metadata;
 
+    protected Map<String, Object> period;
+
+    protected Map<String, Object> source;
+
     protected String subscription;
+
+    protected ListPlansResponse items;
+
+    protected PlanResponse plan;
+
+    protected int quantity;
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public PlanResponse getPlan() {
+        return plan;
+    }
+
+    public ListPlansResponse getItems() {
+        return items;
+    }
+
+    public Map<String, Object> getPeriod() {
+        return period;
+    }
+
+    public Map<String, Object> getSource() {
+        return source;
+    }
 
     public String getId() {
         return id;
@@ -79,5 +114,9 @@ public class InvoiceItemResponse {
 
     public String getSubscription() {
         return subscription;
+    }
+
+    public boolean isDiscountable() {
+        return discountable;
     }
 }

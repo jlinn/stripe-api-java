@@ -1,7 +1,9 @@
 package net.joelinn.stripe.response.charges;
 
 import net.joelinn.stripe.response.cards.CardResponse;
+import net.joelinn.stripe.response.customers.Shipping;
 import net.joelinn.stripe.response.disputes.DisputeResponse;
+import net.joelinn.stripe.response.outcome.OutcomeResponse;
 import net.joelinn.stripe.response.refunds.ListRefundsResponse;
 
 import java.util.Date;
@@ -43,6 +45,8 @@ public class ChargeResponse {
 
     protected String description;
 
+    protected String destination;
+
     protected DisputeResponse dispute;
 
     protected String failureCode;
@@ -51,11 +55,41 @@ public class ChargeResponse {
 
     protected String invoice;
 
+    protected String order;
+
+    protected Map<String, Object> fraudDetails;
+
     protected Map<String, Object> metadata;
 
     protected String statementDescription;
 
+    protected String statementDescriptor;
+
     protected String receiptEmail;
+
+    protected String receiptNumber;
+
+    protected String application;
+
+    protected String review;
+
+    protected String status;
+
+    protected String sourceTransfer;
+
+    protected String transferGroup;
+
+    protected Map<String, Object> source;
+
+    protected float applicationFee;
+
+    protected OutcomeResponse outcome;
+
+    protected Shipping shipping;
+
+    public String getApplication() {
+        return application;
+    }
 
     public String getId() {
         return id;
@@ -117,6 +151,10 @@ public class ChargeResponse {
         return description;
     }
 
+    public String getDestination() {
+        return destination;
+    }
+
     public String getFailureCode() {
         return failureCode;
     }
@@ -129,6 +167,14 @@ public class ChargeResponse {
         return invoice;
     }
 
+    public String getOrder() {
+        return order;
+    }
+
+    public Map<String, Object> getFraudDetails() {
+        return fraudDetails;
+    }
+
     public Map<String, Object> getMetadata() {
         return metadata;
     }
@@ -137,11 +183,51 @@ public class ChargeResponse {
         return statementDescription;
     }
 
+    public String getStatementDescriptor() {
+        return statementDescriptor;
+    }
+
     public DisputeResponse getDispute() {
         return dispute;
     }
 
     public String getReceiptEmail() {
         return receiptEmail;
+    }
+
+    public String getReceiptNumber() {
+        return receiptNumber;
+    }
+
+    public String getReview() {
+        return review;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public Map<String, Object> getSource() {
+        return source;
+    }
+
+    public String getSourceTransfer() {
+        return sourceTransfer;
+    }
+
+    public String getTransferGroup() {
+        return transferGroup;
+    }
+
+    public float getApplicationFee() {
+        return applicationFee;
+    }
+
+    public OutcomeResponse getOutcome() {
+        return outcome;
+    }
+
+    public Shipping getShipping() {
+        return shipping;
     }
 }

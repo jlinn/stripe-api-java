@@ -23,6 +23,12 @@ public class RefundResponse {
 
     protected String charge;
 
+    protected String reason;
+
+    protected String receiptNumber;
+
+    protected String status;
+
     protected Map<String, Object> metadata;
 
     public String getId() {
@@ -51,6 +57,18 @@ public class RefundResponse {
 
     public String getCharge() {
         return charge;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public String getReceiptNumber() {
+        return receiptNumber;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public Map<String, Object> getMetadata() {

@@ -19,7 +19,7 @@ public class CustomerResponse {
 
     protected boolean livemode;
 
-    protected ListCardsResponse cards;
+    protected ListCardsResponse sources;
 
     protected Date created;
 
@@ -27,7 +27,22 @@ public class CustomerResponse {
 
     protected String currency;
 
-    protected String defaultCard;
+    protected String defaultSource;
+
+    protected Shipping shipping;
+
+    public Shipping getShipping() {
+        return shipping;
+    }
+
+    public String getDefaultSource() {
+        return defaultSource;
+    }
+
+    public CustomerResponse setDefaultSource(String defaultSource) {
+        this.defaultSource = defaultSource;
+        return this;
+    }
 
     protected boolean delinquent;
 
@@ -53,8 +68,8 @@ public class CustomerResponse {
         return livemode;
     }
 
-    public ListCardsResponse getCards() {
-        return cards;
+    public ListCardsResponse getSources() {
+        return sources;
     }
 
     public Date getCreated() {
@@ -67,10 +82,6 @@ public class CustomerResponse {
 
     public String getCurrency() {
         return currency;
-    }
-
-    public String getDefaultCard() {
-        return defaultCard;
     }
 
     public boolean isDelinquent() {

@@ -16,4 +16,9 @@ public class UpdateSubscriptionRequest extends CreateSubscriptionRequest<UpdateS
         this.prorate = prorate;
         return this;
     }
+
+    public UpdateSubscriptionRequest setPlan(String plan) {
+        this.plan = plan;
+        return this;
+    }
 }

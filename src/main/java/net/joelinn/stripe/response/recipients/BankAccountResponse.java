@@ -12,6 +12,12 @@ public class BankAccountResponse {
 
     protected String bankName;
 
+    protected String accountHolderName;
+
+    protected String accountHolderType;
+
+    protected String routingNumber;
+
     protected String country;
 
     protected String currency;
@@ -26,6 +32,8 @@ public class BankAccountResponse {
 
     protected boolean verified;
 
+    protected String status;
+
     public String getId() {
         return id;
     }
@@ -36,6 +44,14 @@ public class BankAccountResponse {
 
     public String getBankName() {
         return bankName;
+    }
+
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
+
+    public String getAccountHolderType() {
+        return accountHolderType;
     }
 
     public String getCountry() {
@@ -64,5 +80,13 @@ public class BankAccountResponse {
 
     public boolean isVerified() {
         return verified;
+    }
+
+    public String getRoutingNumber() {
+        return routingNumber;
+    }
+
+    public String getStatus() {
+        return status;
     }
 }

@@ -1,6 +1,8 @@
 package net.joelinn.stripe.response.subscriptions;
 
 import net.joelinn.stripe.response.discounts.DiscountResponse;
+import net.joelinn.stripe.response.plans.ListPlansResponse;
+import net.joelinn.stripe.response.plans.ListPlansResponseWrapper;
 import net.joelinn.stripe.response.plans.PlanResponse;
 
 import java.util.Date;
@@ -15,6 +17,8 @@ public class SubscriptionResponse {
     protected String id;
 
     protected PlanResponse plan;
+
+    protected ListPlansResponseWrapper items;
 
     protected String object;
 
@@ -44,6 +48,16 @@ public class SubscriptionResponse {
 
     protected Date trialStart;
 
+    protected Date created;
+
+    protected boolean livemode;
+
+    protected double taxPercent;
+
+    public Date getCreated() {
+        return created;
+    }
+
     protected Map<String, Object> metadata;
 
     public String getId() {
@@ -52,6 +66,10 @@ public class SubscriptionResponse {
 
     public PlanResponse getPlan() {
         return plan;
+    }
+
+    public ListPlansResponseWrapper getItems() {
+        return items;
     }
 
     public String getObject() {
@@ -112,5 +130,13 @@ public class SubscriptionResponse {
 
     public Map<String, Object> getMetadata() {
         return metadata;
+    }
+
+    public boolean isLivemode() {
+        return livemode;
+    }
+
+    public double getTaxPercent() {
+        return taxPercent;
     }
 }

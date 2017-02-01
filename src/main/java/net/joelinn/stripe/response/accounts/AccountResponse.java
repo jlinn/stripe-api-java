@@ -20,17 +20,41 @@ public class AccountResponse {
 
     protected boolean detailsSubmitted;
 
-    protected boolean chargeEnabled;
+    protected boolean chargesEnabled;
 
-    protected boolean transferEnabled;
+    protected boolean transfersEnabled;
+
+    protected boolean managed;
 
     protected List<String> currenciesSupported;
 
     protected String defaultCurrency;
 
+    protected String businessLogo;
+
+    protected String businessName;
+
+    protected String businessUrl;
+
     protected String country;
 
     protected String object;
+
+    protected String supportEmail;
+
+    protected String supportPhone;
+
+    public String getSupportEmail() {
+        return supportEmail;
+    }
+
+    public String getSupportPhone() {
+        return supportPhone;
+    }
+
+    public String getBusinessUrl() {
+        return businessUrl;
+    }
 
     public String getId() {
         return id;
@@ -56,12 +80,12 @@ public class AccountResponse {
         return detailsSubmitted;
     }
 
-    public boolean isChargeEnabled() {
-        return chargeEnabled;
+    public boolean isChargesEnabled() {
+        return chargesEnabled;
     }
 
-    public boolean isTransferEnabled() {
-        return transferEnabled;
+    public boolean isTransfersEnabled() {
+        return transfersEnabled;
     }
 
     public List<String> getCurrenciesSupported() {
@@ -78,5 +102,17 @@ public class AccountResponse {
 
     public String getObject() {
         return object;
+    }
+
+    public String getBusinessLogo() {
+        return businessLogo;
+    }
+
+    public String getBusinessName() {
+        return businessName;
+    }
+
+    public boolean isManaged() {
+        return managed;
     }
 }

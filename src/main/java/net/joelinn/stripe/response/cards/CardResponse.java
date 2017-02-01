@@ -1,5 +1,7 @@
 package net.joelinn.stripe.response.cards;
 
+import java.util.Map;
+
 /**
  * User: Joe Linn
  * Date: 5/21/2014
@@ -11,6 +13,8 @@ public class CardResponse {
     protected String object;
 
     protected String last4;
+
+    protected String dynamicLast4;
 
     protected String brand;
 
@@ -47,6 +51,30 @@ public class CardResponse {
     protected String addressZipCheck;
 
     protected String recipient;
+
+    protected String tokenizationMethod;
+
+    protected boolean active;
+
+    protected int amount;
+
+    protected int amountReceived;
+
+    protected String accountHolderName;
+
+    protected Map<String, Object> metadata;
+
+    public Map<String, Object> getMetadata() {
+        return metadata;
+    }
+
+    public String getTokenizationMethod() {
+        return tokenizationMethod;
+    }
+
+    public String getDynamicLast4() {
+        return dynamicLast4;
+    }
 
     public String getId() {
         return id;
@@ -130,5 +158,21 @@ public class CardResponse {
 
     public String getFunding() {
         return funding;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public int getAmountReceived() {
+        return amountReceived;
+    }
+
+    public String getAccountHolderName() {
+        return accountHolderName;
     }
 }

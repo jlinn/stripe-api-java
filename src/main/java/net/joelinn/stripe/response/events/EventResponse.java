@@ -14,6 +14,8 @@ import java.util.Map;
 public class EventResponse {
     protected String id;
 
+    protected String apiVersion;
+
     protected String object;
 
     protected boolean livemode;
@@ -28,6 +30,10 @@ public class EventResponse {
     protected String type;
 
     protected String request;
+
+    public String getApiVersion() {
+        return apiVersion;
+    }
 
     public String getId() {
         return id;

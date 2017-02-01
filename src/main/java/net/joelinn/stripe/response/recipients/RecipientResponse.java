@@ -37,6 +37,8 @@ public class RecipientResponse {
 
     protected String defaultCard;
 
+    protected String migratedTo;
+
     public String getId() {
         return id;
     }
@@ -87,5 +89,9 @@ public class RecipientResponse {
 
     public String getDefaultCard() {
         return defaultCard;
+    }
+
+    public String getMigratedTo() {
+        return migratedTo;
     }
 }

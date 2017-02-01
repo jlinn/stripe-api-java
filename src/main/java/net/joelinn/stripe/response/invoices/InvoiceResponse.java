@@ -29,6 +29,8 @@ public class InvoiceResponse {
 
     protected String customer;
 
+    protected String receiptNumber;
+
     protected Date date;
 
     protected boolean forgiven;
@@ -47,7 +49,11 @@ public class InvoiceResponse {
 
     protected int total;
 
+    protected int tax;
+
     protected int applicationFee;
+
+    protected double taxPercent;
 
     protected String charge;
 
@@ -66,6 +72,8 @@ public class InvoiceResponse {
     protected Map<String, Object> metadata;
 
     protected String statementDescription;
+
+    protected String statementDescriptor;
 
     public String getId() {
         return id;
@@ -103,6 +111,10 @@ public class InvoiceResponse {
         return customer;
     }
 
+    public String getReceiptNumber() {
+        return receiptNumber;
+    }
+
     public Date getDate() {
         return date;
     }
@@ -133,6 +145,10 @@ public class InvoiceResponse {
 
     public int getTotal() {
         return total;
+    }
+
+    public int getTax() {
+        return tax;
     }
 
     public int getApplicationFee() {
@@ -177,5 +193,13 @@ public class InvoiceResponse {
 
     public boolean isForgiven() {
         return forgiven;
+    }
+
+    public String getStatementDescriptor() {
+        return statementDescriptor;
+    }
+
+    public double getTaxPercent() {
+        return taxPercent;
     }
 }

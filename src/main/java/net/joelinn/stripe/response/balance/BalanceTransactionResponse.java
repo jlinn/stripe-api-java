@@ -1,5 +1,8 @@
 package net.joelinn.stripe.response.balance;
 
+import net.joelinn.stripe.response.transfers.ListTransfersResponse;
+import net.joelinn.stripe.response.transfers.TransferResponse;
+
 import java.util.Date;
 import java.util.List;
 
@@ -25,6 +28,8 @@ public class BalanceTransactionResponse {
 
     protected List<FeeDetailsResponse> feeDetails;
 
+    protected ListTransfersResponse sourcedTransfers;
+
     protected int net;
 
     protected String type;
@@ -34,6 +39,10 @@ public class BalanceTransactionResponse {
     protected String description;
 
     protected String source;
+
+    public ListTransfersResponse getSourcedTransfers() {
+        return sourcedTransfers;
+    }
 
     public String getId() {
         return id;
