@@ -17,6 +17,8 @@ public class CreateChargeRequest extends Request{
 
     protected String customer;
 
+    protected String source;
+
     protected Object card;
 
     protected String description;
@@ -74,6 +76,11 @@ public class CreateChargeRequest extends Request{
         return this;
     }
 
+    public CreateChargeRequest setSource(String source) {
+        this.source = source;
+        return this;
+    }
+
     public int getAmount() {
         return amount;
     }
@@ -88,6 +95,10 @@ public class CreateChargeRequest extends Request{
 
     public Object getCard() {
         return card;
+    }
+
+    public String getSource() {
+        return source;
     }
 
     public String getDescription() {

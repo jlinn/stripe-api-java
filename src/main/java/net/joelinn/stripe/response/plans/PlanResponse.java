@@ -30,7 +30,7 @@ public class PlanResponse {
 
     protected short trialPeriodDays;
 
-    protected String statementDescription;
+    protected String statementDescriptor;
 
     public String getId() {
         return id;
@@ -76,7 +76,7 @@ public class PlanResponse {
         return trialPeriodDays;
     }
 
-    public String getStatementDescription() {
-        return statementDescription;
+    public String getStatementDescriptor() {
+        return statementDescriptor;
     }
 }

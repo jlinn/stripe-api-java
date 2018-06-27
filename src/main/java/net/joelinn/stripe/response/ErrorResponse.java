@@ -14,6 +14,8 @@ public class ErrorResponse {
 
     protected String param;
 
+    protected String declineCode;
+
     public String getType() {
         return type;
     }
@@ -28,5 +30,9 @@ public class ErrorResponse {
 
     public String getParam() {
         return param;
+    }
+
+    public String getDeclineCode() {
+        return declineCode;
     }
 }

@@ -21,6 +21,8 @@ public class TokenResponse {
 
     protected String type;
 
+    protected String clientIp;
+
     protected boolean used;
 
     protected BankAccountResponse bankAccount;
@@ -53,6 +55,10 @@ public class TokenResponse {
 
     public CardResponse getCard() {
         return card;
+    }
+
+    public String getClientIp() {
+        return clientIp;
     }
 
     public String getType() {

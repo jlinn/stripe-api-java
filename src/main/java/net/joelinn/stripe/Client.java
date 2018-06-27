@@ -113,7 +113,11 @@ public class Client {
     protected void handleError(final ErrorResponse error, final int status){
         StripeApiException apiException = new StripeApiException(error, status);
         if(error.getType().equals("card_error")){
-            final String code = error.getCode();
+            String code = error.getCode();
+            if (code == null) {
+                code = error.getDeclineCode();
+            }
+
             if(code.equals("incorrect_number")){
                 throw new IncorrectNumberException(apiException);
             }

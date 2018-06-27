@@ -7,3 +7,6 @@ src/test/resources/junit.properties
 /data
 /target
 /out
+.classpath
+.project
+.settings/
