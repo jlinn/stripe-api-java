@@ -1,6 +1,8 @@
 package net.joelinn.stripe.response.events;
 
 import net.joelinn.stripe.json.StripeObjectDeserializer;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.map.annotate.JsonDeserialize;
 
 import java.util.Date;
@@ -11,6 +13,7 @@ import java.util.Map;
  * Date: 5/24/2014
  * Time: 3:28 PM
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class EventResponse {
     protected String id;
 
@@ -55,6 +58,7 @@ public class EventResponse {
         return data;
     }
 
+    @JsonProperty(value = "pending_webhooks")
     public int getPendingWebhooks() {
         return pendingWebhooks;
     }
